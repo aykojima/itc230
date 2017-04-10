@@ -1,0 +1,12 @@
+{
+  "name" : "List Manager Web Application",
+  "description" : "Assignment for itc230 at Seattle Central College",
+  "homepage" : "",
+  "keywords" : ["list", "management", "itc230", "client", "browser" "node.js"],
+  "author" : "Ayumi Kojima <akojim02@seattlecentral.com>",
+  "contributors" : [],
+  "dependencies" : [],
+  "repository" : {"type": "git", "url": "https://github.com/aykojima/sp17itc230ListManagementWebApplication"},
+  "main" : "index.js",
+  "version" : "1.1.1"
+}
