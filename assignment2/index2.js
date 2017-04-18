@@ -25,8 +25,10 @@ function serveStaticFile(res, path, contentType, responseCode){
 
 //http.createServer(function(req,res){
 http.createServer((req,res) => {
-let url = req.url.split("?");  
-  let params = qs.parse(url[1]); 
+  let url = req.url.split("?");  
+  let params = qs.parse(url[1]);
+  let params2 = qs.parse(url[2]);
+  let params3 = qs.parse(url[3]);
   let path = url[0].toLowerCase();
     switch(path){
         case '/':
@@ -42,17 +44,18 @@ let url = req.url.split("?");
             res.end('Results for ' + params.capital + "\n" + results); 
             break;
         case '/delete':
-              let deleted = bigCity.delete(params.capital);
-              res.writeHead(200, {'Content-Type': 'text/plain'});
-              let resultsD = (deleted) ? JSON.stringify(deleted): "Not found";
-              res.end(params.capital + ' removed. ' + resultsD);
-              break;
-        /*case '/delete':
-            let removed = bigCity.delete(params.capital);
+            let deleted = bigCity.delete(params.capital);
             res.writeHead(200, {'Content-Type': 'text/plain'});
-            res.end(params.capital + " removed \n");
+            let resultsD = (deleted) ? JSON.stringify(deleted): "Not found";
+            res.end(params.capital + ' removed. ' + resultsD);
             break;
-            */
+        case '/add':
+            //let added = bigCity.add(params.capital, params2.country, params3.population);
+            let added = bigCity.add(params.capital);
+            res.writeHead(200, {'Content-Type': 'text/plain'});
+            let resultsA = (added) ? JSON.stringify(added): "Not found";
+            res.end(resultsA);
+            break;
         default:
             serveStaticFile(res, '/public/404.html','text/html', 404);
             break;
