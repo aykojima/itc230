@@ -1,39 +1,59 @@
 'use strict'
 
 let bigCities = [
-    {capital: "Washington,D.C.", country:"United States of America", population:"0.65 million"},
-    {capital: "Tokyo", coutry:"Japan", population:"13.62 million"},
-    {capital: "Rabat", country:"Morocco", population:"0.57 million"},
-    {capital: "Paris", country:"France", population:"2.24 million"},
-    {capital: "Hanoi", country:"Vietnam", population:"7.58 million"},   
+    {capital: "washington,D.C.", country:"United States of America", population:"0.65 million"},
+    {capital: "tokyo", coutry:"Japan", population:"13.62 million"},
+    {capital: "rabat", country:"Morocco", population:"0.57 million"},
+    {capital: "paris", country:"France", population:"2.24 million"},
+    {capital: "hanoi", country:"Vietnam", population:"7.58 million"},   
 ];
 
 exports.get = (capital) => {
     return bigCities.find((item) => {
-        return item.capital.toLowerCase() == capital.toLowerCase();
+        return item.capital == capital;
     });    
 }
 
-//console.log(this.get("Tokyo"))
+//console.log(this.get("tokyo"))
 
-/*exports.delete = (capital) => {
-    var len = bigCities.length;    
-    bigCities = bigCities.filter( (item) => {
-        return item.capital !== capital;
-    });
-    var action = (bigCities.length == len) ? "" : "deleted";
-    return { "action": action, "total": bigCities.length };
-}*/
 exports.delete = (capital) => {
     let oldLength = bigCities.length;
     var newCities = bigCities.filter((item) =>{
-    return item.capital.toLowerCase() !== capital.toLowerCase();    
+    return item.capital !== capital;    
     });
     bigCities = newCities;
     
-    return { deleted: capital, total: bigCities.length};
-    
-    
+    return { deleted: capital, total: bigCities.length};    
 }
 
 //console.log(this.delete("Tokyo"))
+
+exports.add = (newCapital) => {
+    var found = this.get(newCapital.capital);
+    var newItem = [];
+    newItem = [];   
+    newItem ["capital"] = newCapital;
+    if (!found) {
+        bigCities.push(newItem);
+    }
+    var action = (found) ? newCapital + " updated" : newCapital + " added";
+    return {"action": action, "total": bigCities.length };
+}
+
+
+/*
+exports.add = (newCapital, newCountry, newPopulation) => {
+    var found = this.get(newCapital.capital);
+    var newItem = [];
+    newItem["capital", "country", "population"] = [newCapital, newCountry, newPopulation];    
+    if (!found) {
+        bigCities.push(newItem);
+    }
+    var action = (found) ? newCapital + " updated" : newCapital + " added";
+    return {"action": action, "total": bigCities.length };
+}*/
+
+
+//console.log(this.add("Seoul", "South Korea", "10 million"));
+
+//console.log(this.get("seoul"));
