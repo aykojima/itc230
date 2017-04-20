@@ -1,12 +1,31 @@
 {
-  "name" : "List Manager Web Application",
-  "description" : "Assignment for itc230 at Seattle Central College",
-  "homepage" : "",
-  "keywords" : ["list", "management", "itc230", "client", "browser" "node.js"],
-  "author" : "Ayumi Kojima <akojim02@seattlecentral.com>",
-  "contributors" : [],
-  "dependencies" : [],
-  "repository" : {"type": "git", "url": "https://github.com/aykojima/sp17itc230ListManagementWebApplication"},
-  "main" : "index.js",
-  "version" : "1.1.1"
+  "name": "itc230",
+  "version": "1.0.0",
+  "description": "itc230 at Seattle Central College",
+  "main": "index.js",
+  "dependencies": {
+    "express": "^4.15.2"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/aykojima/itc230.git"
+  },
+  "keywords": [
+    "list",
+    "magagement",
+    "itc230",
+    "client",
+    "browser",
+    "node.js"
+  ],
+  "author": "Ayumi Kojima",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/aykojima/itc230/issues"
+  },
+  "homepage": "https://github.com/aykojima/itc230#readme"
 }
