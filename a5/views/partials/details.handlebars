@@ -1,0 +1,22 @@
+<body>
+  {{#if result}}
+    <h2>Details for {{capital}}</h2>
+    <ul>
+        {{#each partials.details.result}}
+            {{!if find the result, iterate the items in the array}}
+        <li>{{this}}</li> 
+        {{/each}}
+    </ul>
+          
+    <form action="delete" method="POST">
+        <label>Delete this capital</label>
+        <!--<input type="text" name="capital" placeholder="Enter capital" required maxlength="100">-->
+        <button name="capital" type="delete" value={{capital}}>Delete</button>
+    </form>       
+  {{else}}
+    <h2>{{capital}} not found</h2>
+  {{/if}}
+    <a href="home">Go back to home page</a>  
+</body>
+
+
