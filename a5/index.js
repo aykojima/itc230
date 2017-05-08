@@ -17,7 +17,6 @@ app.use(express.static(__dirname + '/views'));
 app.use(require('body-parser').urlencoded({ extended: true }));
 
 
-
 //set up handlebars view engine
 
 app.engine('handlebars', exphbs({defaultLayout: 'main'}));
@@ -41,6 +40,8 @@ app.get('/details', function(req,res){
 app.get('/about', function(req, res){
     res.render('about');
 })
+
+
 
 
 
