@@ -1,38 +1,31 @@
 {
   "name": "itc230",
   "version": "1.0.0",
-  "description": "itc230 at Seattle Central College",
+  "description":  "itc230 at Seattle Central College",
   "main": "index.js",
-  "dependencies": {
-    "body-parser": "^1.17.1",
-    "express": "^4.15.2",
-    "node": "0.0.0"
-  },
-  "devDependencies": {
-    "chai": "^3.5.0",
-    "eslint": "^3.19.0",
-    "mocha": "^3.3.0"
-  },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "lint": "eslint **/*.js",
+    "lint": "eslint **/*.js"
   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/aykojima/itc230.git"
   },
-  "keywords": [
-    "list",
-    "magagement",
-    "itc230",
-    "client",
-    "browser",
-    "node.js"
-  ],
   "author": "Ayumi Kojima",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/aykojima/itc230/issues"
   },
-  "homepage": "https://github.com/aykojima/itc230#readme"
+  "homepage": "https://github.com/aykojima/itc230#readme",
+  "dependencies": {
+    "express": "^4.15.2",
+    "express-handlebars": "~0.5.0",
+    "chai": "^3.5.0",
+    "node": "0.0.0"
+  },
+  "devDependencies": {
+    "eslint": "^3.19.0",
+    "mocha": "^3.3.0"
+    
+  }
 }
