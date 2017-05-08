@@ -38,3 +38,6 @@ exports.add = (newCapital) => {
 }
 
 //console.log(this.add("fake"))
+
+
+
