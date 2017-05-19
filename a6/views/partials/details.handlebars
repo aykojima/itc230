@@ -1,0 +1,22 @@
+
+  {{#if result}}
+    <h2>Details for {{capital}}</h2>
+    <ul>
+        
+            {{!if find the result, iterate the items in the array}}
+        <p>Capital: {{result.capital}}</p>
+        <p>Country: {{result.country}}</p>
+        <p>Population: {{result.population}}</p>       
+        
+    </ul>
+          
+    <form action="delete" method="POST">        
+        <button id="delete" name="capital" type="delete" value={{capital}}>Delete this capital</button>
+    </form>       
+  {{else}}
+    <h2>{{capital}} not found</h2>
+  {{/if}}
+    <a href="home">Go back to home page</a>  
+
+
+
