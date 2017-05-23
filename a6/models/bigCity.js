@@ -1,11 +1,12 @@
-//var credentials = require("../lib/credentials");
+var credentials = require("../lib/credentials");
+//console.log(credentials);
+
+var connectionString = credentials.development.connectionString;
+console.log(connectionString);
+
 var mongoose = require("mongoose");
 
 // remote db settings 
-var connectionString = 'mongodb://<myURI>';
-//Having trouble getting info from my credential.js that has the URI
-//So, I created var connectionString here and connect to MongoDB
-
 var options = { server: { socketOptions: { keepAlive: 1, connectTimeoutMS: 30000 }  } };
 mongoose.connect(connectionString, options);
 
